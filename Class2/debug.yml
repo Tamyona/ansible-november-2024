@@ -1,0 +1,11 @@
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install packages
+    ansible.builtin.apt:
+      name: tree
+    register: hello
+
+  - name: Debug mode
+    debug:
+      msg: "{{ hello }}"
